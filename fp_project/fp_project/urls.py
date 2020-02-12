@@ -14,23 +14,27 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
 from django.conf import settings
-from django.conf.urls import include, url
-from django.views.generic.base import TemplateView
+from django.conf.urls import url, include
+from django.contrib.auth.views import LoginView, LogoutView
+
+from users import views as users_views
 
 urlpatterns = [
-    # Always used :
-    path('admin/', admin.site.urls),
-    path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    # Admin page :
+    url(r'^admin/', admin.site.urls),
     
-    # For default django signup :
-    # path('accounts/', include('accounts.urls')),
-    # path('accounts/', include('django.contrib.auth.urls')),
+    # Default home page :
+    url(r'^$', users_views.home, name='home'),
     
-    # For custom user model :
-    path('users/', include('users.urls')),
-    path('users/', include('django.contrib.auth.urls')),
+    # Login page :
+    url(r'^login/$', LoginView.as_view(), {'template_name': 'login.html'}, name='login'),
+    
+    # Logout page :
+    url(r'^logout/', LogoutView.as_view(), {'next_page': 'login'}, name='logout'),
+    
+    # Signup page :
+    url(r'^signup/$', users_views.signup, name='signup'),
 ]
 
 if settings.DEBUG:
