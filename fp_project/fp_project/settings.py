@@ -30,8 +30,8 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+#'users.apps.UsersConfig',
 INSTALLED_APPS = [
-    'users.apps.UsersConfig',
     'presentation.apps.PresentationConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -80,11 +80,11 @@ WSGI_APPLICATION = 'fp_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'fp',
-	'USER': 'lucas',
-	'PASSWORD': '',
-	'HOST': '',
-	'PORT': '5432',
+        'NAME': 'presentation',
+	    'USER': 'lucas',
+	    'PASSWORD': '',
+	    'HOST': '',
+	    'PORT': '5432',
     }
 }
 

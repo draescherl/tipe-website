@@ -20,6 +20,7 @@ from django.conf.urls import url, include
 from django.contrib.auth import views as auth_views
 
 from users import views as users_views
+from presentation import views as presentation_views
 
 urlpatterns = [
     # Admin page :
@@ -36,6 +37,9 @@ urlpatterns = [
     
     # Signup page :
     url(r'^signup/$', users_views.signup, name='signup'),
+
+    # Slide views :
+    url(r'^presentation/', include('presentation.urls', namespace='presentation')),
 ]
 
 if settings.DEBUG:
