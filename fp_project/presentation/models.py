@@ -6,3 +6,8 @@ class Slide(models.Model):
     name = models.CharField(max_length=200, unique=True)
     title = models.CharField(max_length=200)
     content = models.CharField(max_length=2000)
+    display = models.BooleanField(default=True)
+    def __str__(self):
+        return self.name
+    class Meta:
+        verbose_name = "Slide"

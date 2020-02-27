@@ -1,0 +1,13 @@
+{% for slide in slides %}
+
+    <div class="slide" id="{{ slide_name }}">
+        <section class="middle">
+            <hgroup>
+                <h1> {{ slide.name }} </h1>
+                <h2> {{ slide.title }} </h2>
+            </hgroup>
+            <p>{{ slide.content }}</p>
+        </section>
+    </div>
+
+{% endfor %}
