@@ -6,7 +6,7 @@ from .models import Slide
 # from .forms import SignUpForm
 
 
-def index(request):
+def slides(request):
     slides = Slide.objects.filter(display=True)
     context = {
         'slides' : slides

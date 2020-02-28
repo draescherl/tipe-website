@@ -4,5 +4,5 @@ from . import views
 
 app_name = 'presentation'
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
+    url(r'^$', views.slides, name='slides'),
 ]
