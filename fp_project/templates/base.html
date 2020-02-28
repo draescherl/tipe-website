@@ -13,12 +13,13 @@
             {% else %}
                 <a href="{% url 'login' %}">login</a>
             {% endif %}
-        <hr>
+            <hr>
         </header>
 
         <main>
+            <!-- Insert login form -->
             {% block content %}{% endblock %}
         </main>
-        
+
     </body>
 </html>
