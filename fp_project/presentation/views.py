@@ -6,17 +6,17 @@ from .models import Slide
 # from .forms import SignUpForm
 
 
-def slides(request):
+def index(request):
     slides = Slide.objects.filter(display=True)
     context = {
         'slides' : slides
     }
-    return render(request, 'presentation/slides.html', context)
+    return render(request, 'presentation/index.html', context)
 
 
-@login_required
-def home(request):
-    return render(request, 'home.html')
+# @login_required
+# def home(request):
+#     return render(request, 'home.html')
 
 
 # def signup(request):
