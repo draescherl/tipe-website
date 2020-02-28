@@ -30,7 +30,6 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-#'users.apps.UsersConfig',
 INSTALLED_APPS = [
     'presentation.apps.PresentationConfig',
     'django.contrib.admin',

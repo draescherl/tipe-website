@@ -18,7 +18,6 @@ from django.conf import settings
 from django.conf.urls import url, include
 from django.contrib.auth import views as auth_views
 
-from users import views as users_views
 from presentation import views as presentation_views
 
 urlpatterns = [
@@ -26,7 +25,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     
     # Default home page :
-    url(r'^$', users_views.home, name='home'),
+    url(r'^$', presentation_views.home, name='home'),
     
     # Login page :
     url(r'^login/$', auth_views.LoginView.as_view(), {'template_name': 'login.html'}, name='login'),
@@ -35,7 +34,7 @@ urlpatterns = [
     url(r'^logout/$', auth_views.LogoutView.as_view(), {'next_page': 'login'}, name='logout'),
     
     # Signup page :
-    #url(r'^signup/$', users_views.signup, name='signup'),
+    #url(r'^signup/$', presentation_views.signup, name='signup'),
     #do not forget to add signup elements back in template if needed
 
     # Slide views :
