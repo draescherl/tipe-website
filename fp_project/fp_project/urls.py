@@ -16,7 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls import url, include
-#from django.contrib.auth.views import LoginView
 from django.contrib.auth import views as auth_views
 
 from users import views as users_views
@@ -36,7 +35,8 @@ urlpatterns = [
     url(r'^logout/$', auth_views.LogoutView.as_view(), {'next_page': 'login'}, name='logout'),
     
     # Signup page :
-    url(r'^signup/$', users_views.signup, name='signup'),
+    #url(r'^signup/$', users_views.signup, name='signup'),
+    #do not forget to add signup elements back in template if needed
 
     # Slide views :
     url(r'^presentation/', include('presentation.urls', namespace='presentation')),
