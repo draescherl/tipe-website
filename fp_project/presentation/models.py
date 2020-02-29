@@ -1,7 +1,7 @@
 from django.db import models
 
-# Create your models here.
 
+# Slide database entry :
 class Slide(models.Model):
     name = models.CharField(max_length=200, unique=True, help_text="A unique ID for your slide.")
     content = models.TextField(help_text="The HTML content of your slide.")
