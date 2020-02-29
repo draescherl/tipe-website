@@ -1,68 +1,33 @@
 <!DOCTYPE html>
-<html>
-{% load static %}
-<head>
-    <meta charset='utf-8'>
-    <title>Presentation</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="stylesheet" type="text/css" href="{% static 'presentation/css/style.css' %}" media="all">
-</head>
-<body>
+<html lang="en">
+    {% load static %}
+    
+    <head>
+        <title>Shower Presentation Engine</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="all" href="{% static 'presentation/themes/ribbon/styles/styles.css' %}">
+        <style>
+            .shower {
+                --slide-ratio: calc(16 / 9);
+            }
+        </style>
+    </head>
 
-    <nav id="helpers"><!-- Defining the floating helpers of the page -->
-        <button title="Previous" id="nav-prev" class="nav-prev">&lt;-</button> 
-        <button title="Jump to slide" id="slide-no">3</button> 
-        <button title="Next" id="nav-next" class="nav-next">-&gt;</button>
-        <menu>
-            <button type="checkbox" data-command="notes" title="View Notes">Notes</button>
-            <button type="checkbox" data-command="help" title="View Help">Help</button>
-        </menu>
-    </nav>
+    <body class="shower list">
 
-    <div class="presentation">
-        <div id="presentation-counter">Loading...</div>
-        <div class="slides">
+        <header class="caption">
+            <h1>Shower Presentation Engine</h1>
+            <p>Yours Truly, Famous Inc.</p>
+        </header>
 
-            <div class="slide" id="slide1">
-                <section class="middle">
-                    <p>Title page</p>
-                    <p>Press <span id="left-init-key" class="key">&rarr;</span> key to continue.</p>
-                </section>
-                <aside class="note">
-                    <section>
-                    Notes for first slide
-                    </section>
-                </aside> 
-            </div>
-        
-            {% block content %}{% endblock %}
+        {% block content %}{% endblock %}
 
-        </div>
+        <div class="progress"></div>
 
-        <div id="hidden-note" class="invisible" style="display: none;"></div>
-        <aside id="help" class="sidebar invisible" style="display: hidden;">
-            <table>
-                <caption>Help</caption>
-                <tr>
-                    <th>Move forward/back</th>
-                    <td>&larr;&nbsp;&rarr;</td>
-                </tr>
-                <tr>
-                    <th>Move forward</th>
-                    <td>spacebar</td>
-                </tr>
-                <tr>
-                    <th>Hidden Notes</th>
-                    <td>N</td>
-                </tr>
-                <tr>
-                    <th>Help</th>
-                    <td>H</td>
-                </tr>
-            </table>
-        </aside>
-    </div>
+        <script src="{% static 'presentation/shower.min.js' %}"></script>
+        <!-- Copyright © 3000 Yours Truly, Famous Inc. -->
 
-    <script type="text/javascript" src="{% static 'presentation/js/script.js' %}"></script>
-</body>
+    </body>
+
 </html>

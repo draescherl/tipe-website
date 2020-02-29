@@ -1,16 +1,5 @@
 {% for slide in slides %}
-    <div class="slide" id="{{ slide.name }}">
-        <section class="middle">
-            <hgroup>
-                <h1> {{ slide.name }} </h1>
-                <h2> {{ slide.title }} </h2>
-            </hgroup>
-            <p>{{ slide.content }}</p>
-        </section>
-        <aside class="note">
-            <section>
-                {{ slide.notes }}
-            </section>
-        </aside>
-    </div>
+    <section class="slide">
+        {{ slide.content|safe }}
+    </section>
 {% endfor %}
