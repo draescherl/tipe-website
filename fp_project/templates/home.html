@@ -3,6 +3,6 @@
 {% block content %}
 
     <h2>Welcome, {{ user.username }} !</h2>
-    <p>Your email address : {{ user.email }}</p>
+    <p>Go to <a href="{% url 'presentation:slides' %}">presentation</a></p>
 
 {% endblock %}
