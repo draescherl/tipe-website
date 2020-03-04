@@ -1,5 +1,14 @@
 {% for slide in slides %}
     <section class="slide">
-        {{ slide.content|safe }}
+        {% if user.is_authenticated %}
+            <table>
+                <tr>
+                    <th>{{ slide.content|safe }}</th>
+                    <th>{{ slide.notes|safe }}</th>
+                </tr>
+            </table>
+        {% else %}
+            {{ slide.content|safe }}
+        {% endif %}
     </section>
 {% endfor %}

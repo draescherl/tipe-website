@@ -3,7 +3,7 @@
     {% load static %}
     
     <head>
-        <title>Shower Presentation Engine</title>
+        <title>Presentation</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" media="all" href="{% static 'presentation/themes/ribbon/styles/styles.css' %}">
@@ -20,6 +20,7 @@
         <header class="caption">
             <h1>Presentation title</h1>
             <p>Author(s)</p>
+            <p>Back to <a href="{% url 'home' %}">home</a></p>
         </header>
 
         <!-- Database slides : (goes to index.html which calls slides.html) -->
