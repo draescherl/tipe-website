@@ -23,8 +23,24 @@ from presentation import views as presentation_views
 urlpatterns = [
     # Admin page :
     url(r'^admin/', admin.site.urls),
-    # Default page :
-    url(r'^$', presentation_views.index, name='index'),
+    
+    # Default home page :
+    url(r'^$', presentation_views.home, name='home'),
+    
+    # Login page :
+    url(r'^login/$', auth_views.LoginView.as_view(), {'template_name': 'login.html'}, name='login'),
+    
+    # Logout page :
+    url(r'^logout/$', auth_views.LogoutView.as_view(), {'next_page': 'login'}, name='logout'),
+    
+    # Signup page :
+    #url(r'^signup/$', presentation_views.signup, name='signup'),
+    #do not forget to add signup elements back in template if needed
+
+    # Slide views :
+    url(r'^presentation/', include('presentation.urls', namespace='presentation')),
+
+    #url(r'^$', presentation_views.index, name='index'),
 ]
 
 if settings.DEBUG:

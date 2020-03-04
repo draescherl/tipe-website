@@ -127,3 +127,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 INTERNAL_IPS = ['127.0.0.1']
+
+
+# Urls to be redirected to :
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = 'presentation:slides'
+LOGOUT_REDIRECT_URL = 'login'
