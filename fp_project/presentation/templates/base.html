@@ -9,30 +9,8 @@
     </head>
 
     <body>
-
-        <div class="wrapper">
-            <header>
-                <h1>Authentication page</h1>
-                {% if user.is_authenticated %}
-                    <a href="{% url 'logout' %}">logout</a>
-                {% endif %}
-                <hr>
-            </header>
-    
-            <main>
-                <!-- Insert login form -->
-                {% block content %}{% endblock %}
-            </main>
-    
-            {% if not user.is_authenticated %}
-                <footer>
-                    <hr>
-                    <h2>Not a presenter ?</h2>
-                    <p>Go to <a href="{% url 'presentation:slides' %}">presentation</a></p>
-                </footer>
-            {% endif %}
-        </div>
-
+        <!-- Insert login form -->
+        {% block content %}{% endblock %}
     </body>
 
 </html>

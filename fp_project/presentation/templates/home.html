@@ -1,8 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-    <h2>Welcome, {{ user.username }} !</h2>
-    <p>Go to <a href="{% url 'presentation:slides' %}">presentation</a></p>
+    
+    <div class="login">
+        <h1>Hello, {{ user.username }} !</h1>
+        <a href="{% url 'presentation:slides' %}" class="btn btn-primary btn-block btn-large">Go to presentation.</a>
+        <a href="{% url 'logout' %}" class="btn btn-primary btn-block btn-large" style="margin-top: 15px;">Logout.</a>
+    </div>
 
 {% endblock %}
