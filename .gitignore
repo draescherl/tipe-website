@@ -1,2 +1,4 @@
 env/
 .vscode/
+presentation/__pycache__/
+fp_project/__pycache__/
