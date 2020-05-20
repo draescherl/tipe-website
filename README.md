@@ -3,6 +3,7 @@
 A presentation tool using the Django framework.
 
 ## Getting Started
+---
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
@@ -52,7 +53,9 @@ sudo service postgresql start
 ```
 
 ### Creating a database
-### Installing our project
+
+## Installing our project
+---
 
 The final piece of software you will need to install is the django debug toolbar :
 ```
@@ -62,12 +65,14 @@ pip install django-debug-toolbar
 You can now go ahead and clone our project into your current directory.
 
 ## Built With
+---
 
 * [Django](https://www.djangoproject.com/) - The web framework used
 * [Shower](https://github.com/shower/shower) - The template used
  
 
 ## Authors
+---
 
 * **Hugo Cambra** - cambralefe@eisti.eu
 * **Lucas Draescher** - draescherl@eisti.eu
@@ -75,5 +80,6 @@ You can now go ahead and clone our project into your current directory.
 * **Antonin Soulier** - soulierant@eisti.eu
 
 ## License
+---
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details.
