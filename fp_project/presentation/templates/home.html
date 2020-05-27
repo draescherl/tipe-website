@@ -5,6 +5,7 @@
     <div class="login">
         <h1>Hello, {{ user.username }} !</h1>
         <a href="{% url 'presentation:slides' %}" class="btn btn-primary btn-block btn-large">Go to presentation.</a>
+        <a href="{% url 'admin:index' %}" class="btn btn-primary btn-block btn-large" style="margin-top: 15px;">To admin page.</a>
         <a href="{% url 'logout' %}" class="btn btn-primary btn-block btn-large" style="margin-top: 15px;">Logout.</a>
     </div>
 
