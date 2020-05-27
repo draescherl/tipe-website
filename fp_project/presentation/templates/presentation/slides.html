@@ -1,12 +1,13 @@
 {% for slide in slides %}
     <section class="slide">
         {% if user.is_authenticated %}
-            <table>
-                <tr>
-                    <th>{{ slide.content|safe }}</th>
-                    <th>{{ slide.notes|safe }}</th>
-                </tr>
-            </table>
+            <div class="content">
+                {{ slide.content|safe }}
+            </div>
+
+            <div class="presentor_notes">
+                {{ slide.notes|safe }}
+            </div>
         {% else %}
             {{ slide.content|safe }}
         {% endif %}
